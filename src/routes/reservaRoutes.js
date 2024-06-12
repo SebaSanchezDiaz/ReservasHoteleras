@@ -4,7 +4,8 @@ const {
   obtenerReservas,
   obtenerReservaPorId,
   actualizarReserva,
-  eliminarReserva
+  eliminarReserva,
+  buscarReservasPorHotel
 } = require('../controllers/reservaController');
 
 const router = express.Router();
@@ -166,5 +167,33 @@ router.put('/reservas/:id', actualizarReserva);
  *         description: Reserva no encontrada
  */
 router.delete('/reservas/:id', eliminarReserva);
+
+/**
+ * @swagger
+ * /api/reservas/hotel/{nombreHotel}:
+ *   get:
+ *     summary: Obtener reservas por el nombre del hotel
+ *     tags: [Reservas]
+ *     parameters:
+ *       - in: path
+ *         name: nombreHotel
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Nombre del hotel
+ *     responses:
+ *       200:
+ *         description: Lista de reservas para el hotel especificado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Reserva'
+ *       404:
+ *         description: No se encontraron reservas para el hotel
+ */
+router.get('/reservas/hotel/:nombreHotel', buscarReservasPorHotel);
+
 
 module.exports = router;

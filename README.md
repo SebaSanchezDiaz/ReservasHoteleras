@@ -9,7 +9,7 @@
 07. Obtener información de una reserva específica (GET) OK
 08. Actualizar información de una reserva (PUT) OK
 09. Eliminar una reserva específica (DELETE) OK
-10. Filtrar reservas por hotel (GET) 
+10. Filtrar reservas por hotel (GET) OK
 11. Filtrar reservas por rango de fechas (GET)
 12. Filtrar reservas por tipo de habitación (GET)
 13. Filtrar reservas por estado (GET)

@@ -58,10 +58,27 @@ const eliminarReserva = async (req, res) => {
   }
 };
 
+const buscarReservasPorHotel = async (req, res) => {
+  try {
+    const nombreHotel = req.params.nombreHotel;
+    const reservas = await Reserva.find({ nombreHotel: nombreHotel });
+    if (reservas.length === 0) {
+      return res.status(404).send({ message: "No se encontraron reservas para este hotel" });
+    }
+    res.send(reservas);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
+
+
 module.exports = {
   crearReserva,
   obtenerReservas,
   obtenerReservaPorId,
   actualizarReserva,
   eliminarReserva,
+  buscarReservasPorHotel
 };
+
+
