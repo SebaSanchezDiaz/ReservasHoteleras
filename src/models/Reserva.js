@@ -8,6 +8,9 @@ const reservaSchema = new mongoose.Schema(
     fechaFin: { type: Date, required: true },
     nombreHotel: { type: String, required: true },
     habitacion: { type: String, required: true },
+    tipoHabitacion: { type: String, required: true },
+    estado: { type: String, required: true },
+    nHuespedes: { type: Number, required: true }
   },
   { collection: process.env.USERS_COLLECTION_NAME }
 );

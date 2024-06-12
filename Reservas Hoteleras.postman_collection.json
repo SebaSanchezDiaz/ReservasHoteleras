@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "132f2db2-900a-430b-baf6-73923b7dc035",
+		"name": "Reservas Hoteleras",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12108672"
+	},
+	"item": [
+		{
+			"name": "Guarda Reserva",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCliente\": \"Sebastian Diaz\",\r\n    \"fechaInicio\": \"2024-06-01\",\r\n    \"fechaFin\": \"2024-06-10\",\r\n    \"habitacion\": \"15\",\r\n    \"nombreHotel\": \"Hotel2\",\r\n    \"tipoHabitacion\": \"Mediana\",\r\n    \"estado\": \"Ocupada\",\r\n    \"nHuespedes\": \"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultaRevervas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borra Reserva",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/665b60934a3b339d2ef19dab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"665b60934a3b339d2ef19dab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultaReservaPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/665b60954a3b339d2ef19dad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"665b60954a3b339d2ef19dad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizaReservaPorId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCliente\": \"Sebastian Sanchez Diaz\",\r\n    \"fechaInicio\": \"2024-06-01\",\r\n    \"fechaFin\": \"2024-06-10\",\r\n    \"habitacion\": \"16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/665b60954a3b339d2ef19dad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"665b60954a3b339d2ef19dad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscaPorNombreHotel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/hotel/Hotel1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"hotel",
+						"Hotel1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscaPorTipoHabitacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/tipoHabitacion/Chica",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"tipoHabitacion",
+						"Chica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscaPorEstado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/estado/Libre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"estado",
+						"Libre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscaPorNHuespedes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/nHuespedes/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"nHuespedes",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscaPorRangoFechas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/rangoFechas/2024-06-01/2024-06-09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"rangoFechas",
+						"2024-06-01",
+						"2024-06-09"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
